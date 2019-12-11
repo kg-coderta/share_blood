@@ -52,3 +52,6 @@ production:
   database: share_blood_production
   username: share_blood
   password: <%= ENV['SHARE_BLOOD_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
