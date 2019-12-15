@@ -50,8 +50,6 @@ test:
 production:
   <<: *default
   database: share_blood_production
-  username: share_blood
-  password: <%= ENV['SHARE_BLOOD_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
