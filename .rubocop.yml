@@ -1,0 +1,15 @@
+inherit_from: .rubocop_todo.yml
+
+Rails:
+  Enabled: true
+
+AllCops:
+  TargetRubyVersion: 2.5.1
+  Exclude:
+    - db/schema.rb
+    - 'script/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+
+AsciiComments:
+  Enabled: false
