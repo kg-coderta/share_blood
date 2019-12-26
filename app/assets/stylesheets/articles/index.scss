@@ -1,0 +1,197 @@
+.wrapper{
+  height: 100%;
+  padding-top: 104px;  
+  overflow: hidden;
+}
+
+.wrapper-image {
+  background-image:url(hero.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wrapper-mask{
+  height: 950px;
+  background-color: rgb(252, 251, 215);
+  opacity: 0.85;
+}
+
+.nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav-top{
+  height: 32px;
+  padding: 0 24px;
+  background: #a5c922;
+  color: gray;
+  font-size: 13px;
+  line-height: 32px;
+  &__wrapper{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+  &__info{
+    display: flex;
+    padding: 0 15px;
+  }
+  &__text{
+    margin-right: 35px;
+  }
+  &__social{
+    padding: 0 12px;
+  }
+}
+
+.social-link{
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-right: 20px;
+}
+
+.nav-main{
+  height: 72px;
+  background: #fff;
+  padding: 0 30px;
+  &__wrapper{
+    display: flex;
+  }
+  &__title{
+    font-size: 22px;
+    line-height: 72px;
+    padding: 0 30px;
+  }
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  line-height: 72px;
+  &__left{
+  display: flex;
+  padding: 0 30px;
+  }
+  &__links{
+    color: #000;
+    padding: 12px,18px;
+    text-decoration: none;
+  }
+  &__read{
+    padding: 0 40px;
+  }
+  &__thumb-icon{
+    padding: 0 10px 0 0;
+  }
+  &__sign-in{
+    position: absolute;
+    right: 100px;
+  }
+}
+
+.other-contents-wrapper{
+  display: flex;
+}
+
+.other-contents-left{
+  height: 650px;
+  width: calc(100% - 350px);
+  background: rgb(219, 241, 248);
+}
+
+.reservation{
+  height: 350px;
+  width: calc((100vw - 350px));
+}
+
+.left-days{
+  font-size: 20px;
+  text-align: center;;
+}
+
+.donated-check{
+  height: 200px;
+  width: calc((100vw - 350px));
+  font-size: 45px;
+  line-height: 200px;
+  text-align: right;
+  display: flex;
+  &__message{
+    width: 50vw;
+    font-size: 30px;
+  }
+  &__button{
+    height: 140px;
+    width: 250px;
+    background: #ffffff;
+    color: #fff;
+    border-radius: 45px;
+    &:hover{
+      background: rgb(250, 199, 208);
+      transition-duration: 1s;
+    }
+  }
+}
+
+.show-donation{
+  height: 350px;
+  width: calc((100vw - 350px));
+  background: #fff url(sakura.jpeg); 
+  border-top: solid 0.2px gray;
+  &__frequency{
+    font-size: 20px;
+    text-align: center;;
+    margin: 15px 0;
+  }
+  &__detail{
+    height: 200px;
+    width: calc((100vw - 350px));
+    font-size: 40px;
+    line-height: 120px;
+    text-align: center;
+    &__button{
+      height: 120px;
+      width: 260px;
+      background: orange;
+      color: #fff;
+      border-radius: 10px;
+      margin: 0 auto;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.other-contents-right{
+  height: 650px;
+  width: 350px;
+}
+.fortune-telling{
+  height: 250px;
+  width: 350px;
+  background: rgb(255, 169, 183);
+  float: right;
+  text-align: center;
+  &__text{
+    font-size: 30px;
+    margin: 40px 0;
+    color: gray;
+  }
+  &__button{
+    height: 30px;
+    width: 200px;
+    background: darkgreen;
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+    line-height: 30px;
+    text-decoration: none;
+  }
+}
