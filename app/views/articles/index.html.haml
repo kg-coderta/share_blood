@@ -1,1 +1,136 @@
-hello
+.wrapper
+  .nav-bar
+    .nav-top
+      .nav-top__wrapper
+        .nav-top__info
+          .nav-top__text 
+            TEL 01-2345-6789 
+          .nav-top__mail
+            Email:test@shareblood.jp
+        .nav-top__social
+          .social-link
+            = link_to "https://twitter.com/JRCS_PR", class: "social_icon" do
+              = fa_icon 'twitter', class: 'twitter'
+          .social-link
+            =link_to "https://www.facebook.com/japaneseredcross/", class: "social_icon" do
+              = fa_icon 'facebook-square', class: 'facebook'
+          .social-link
+            =link_to "https://www.youtube.com/channel/UCJTDYVcKHYeIy_9EiQDepaQ",  class: "social_icon" do
+              = fa_icon 'youtube', class: 'youtube'
+    .nav-main
+      .nav-main__wrapper
+        .nav-main__title.bold
+          =link_to "ShareBlood", root_path, class: "nav-menu__links"
+        .nav-menu
+          .nav-menu__left
+            .nav-menu__post
+              = link_to new_article_path, class: "nav-menu__links" do
+                .nav-menu__post-icon
+                  = fa_icon 'edit', class: 'nav-menu__post-icon'
+                  投稿する
+            .nav-menu__read
+              = link_to articles_path, class: "nav-menu__links" do
+                .nav-menu__read-icon
+                  = fa_icon "book", class: 'nav-menu__read-icon'
+                  記事一覧を見る
+          .nav-menu__sign-in
+            = link_to new_user_session_path, class: "nav-menu__links" do
+              ログイン
+  .wrapper-image        
+    .wrapper-mask        
+      .articles-wrapper
+        .articles-header
+          = fa_icon 'thumbs-o-up', class: 'nav-menu__thumb-icon'
+          オススメの献血ルーム紹介
+        .articles-main-wrapper
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です    
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です    
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
+          .article-box
+            .article-image
+            .article-body
+              .article-body__title.bold
+                test-title
+              .article-body__text
+                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です  
+  .other-contents-wrapper
+    .other-contents-left
+      .reservation
+        .left-days
+          200ml献血は 
+          %span{style:  "font-size:2em;"}●月●日 
+        .left-days
+          400ml献血、成分献血は
+          %span{style: "font-size:2em;"}■月■日
+        .left-days
+          から可能です
+        .donated-check
+          .donated-check__message
+            献血が終わったら ここをクリック！→
+          = form_with model: @user, url: root_path, method: :get, id: 'donated_user', class: 'donated_user', local: true do |f|
+            = f.submit "献血した！", class: "donated-check__button", value: "献血した！"
+      .show-donation
+        .donation-mask
+          .show-donation__frequency
+            ◯◯さんはこれまでに
+            %span{style:  "font-size:2.5em;"}××回
+          .show-donation__frequency
+            献血しています
+          .show-donation__detail
+            .show-donation__detail__button
+              データを見る
+    .other-contents-right
+      %h2 
+      #map
+      :css
+        #map{
+          height: 400px;
+          width:350px;
+          float:right;
+        }
+      :javascript
+        function initMap(){
+          let map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 34.661282, lng: 135.501132}, 
+          zoom: 14
+          });
+        }
+      %script{async: "", defer: "defer", src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCHRwzVB85oCj39gMjzRaE-Hi5EVtwryAc&callback=initMap"}
+      
+      .fortune-telling
+        .fortune-telling__text.bold
+          血液型占いにチャレンジしてみよう！
+        .fortune-telling__button
+          =link_to "やってみる→", root_path, class: "fortune-telling__button"    
