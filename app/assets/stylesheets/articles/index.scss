@@ -5,7 +5,7 @@
 }
 
 .wrapper-image {
-  background-image:url(hero.jpg);
+  background-image: image-url("hero.jpg");
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -142,7 +142,8 @@
 .show-donation{
   height: 350px;
   width: calc((100vw - 350px));
-  background: #fff url(sakura.jpeg); 
+  background: #fff;
+  background-image: image-url("sakura.jpg");
   border-top: solid 0.2px gray;
   &__frequency{
     font-size: 20px;
