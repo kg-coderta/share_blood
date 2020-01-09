@@ -23,5 +23,9 @@ h3 {
 
 a{
   color: gray;
+  text-decoration: none;
+  &:hover{
+    opacity: 0.5;
+  }
 }
 
