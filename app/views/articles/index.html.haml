@@ -127,8 +127,7 @@
           zoom: 14
           });
         }
-      %script{async: "", defer: "defer", src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCHRwzVB85oCj39gMjzRaE-Hi5EVtwryAc&callback=initMap"}
-      
+      %script{async: "", defer: "defer", src: "https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&callback=initMap"}
       .fortune-telling
         .fortune-telling__text.bold
           血液型占いにチャレンジしてみよう！
