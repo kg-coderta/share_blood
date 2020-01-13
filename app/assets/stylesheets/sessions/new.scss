@@ -2,3 +2,15 @@
   height: 100vh;
   background-color: paleturquoise;
 }
+.signin-main{
+  text-align: center;
+  padding-top: 18vh;
+}
+
+.signin-title{
+  font-size: 6vw;
+  color: rgb(160, 156, 156);
+  &__icon{
+    font-size: 5rem!important;
+  }
+}

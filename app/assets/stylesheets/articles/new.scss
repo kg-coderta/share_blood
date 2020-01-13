@@ -1,0 +1,50 @@
+.write-wrapper{
+  height: calc(100vh - 104px);
+  background: rgb(245, 245, 245);
+}
+
+.write-main{
+  text-align: center;
+  padding-top: 60px;
+}
+
+.write-title{
+  font-size: 3vw;
+  color: rgb(160, 156, 156);
+}
+
+.input-article{
+  height: 350px;
+  width: 55vw;
+  margin: 25px auto;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.article-field{
+  width: 55vw;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-image{
+  font-size: 1.4rem;
+  font-size: 20px;
+
+}
+
+.article-file{
+  line-height: 15px;
+}
+
+.article-button{
+  display: block;
+  width: 150px;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+  background-color:gray;
+  color: #fff;
+
+}

@@ -1,0 +1,37 @@
+.nav-bar
+  .nav-top
+    .nav-top__wrapper
+      .nav-top__info
+        .nav-top__text 
+          TEL 01-2345-6789 
+        .nav-top__mail
+          Email:test@shareblood.jp
+      .nav-top__social
+        .social-link
+          = link_to "https://twitter.com/JRCS_PR", class: "social_icon" do
+            = fa_icon 'twitter', class: 'twitter'
+        .social-link
+          =link_to "https://www.facebook.com/japaneseredcross/", class: "social_icon" do
+            = fa_icon 'facebook-square', class: 'facebook'
+        .social-link
+          =link_to "https://www.youtube.com/channel/UCJTDYVcKHYeIy_9EiQDepaQ",  class: "social_icon" do
+            = fa_icon 'youtube', class: 'youtube'
+  .nav-main
+    .nav-main__wrapper
+      .nav-main__title.bold
+        =link_to "ShareBlood", root_path, class: "nav-menu__links"
+      .nav-menu
+        .nav-menu__left
+          .nav-menu__post
+            = link_to new_article_path, class: "nav-menu__links" do
+              .nav-menu__post-icon
+                = fa_icon 'edit', class: 'nav-menu__post-icon'
+                投稿する
+          .nav-menu__read
+            = link_to articles_path, class: "nav-menu__links" do
+              .nav-menu__read-icon
+                = fa_icon "book", class: 'nav-menu__read-icon'
+                記事一覧を見る
+        .nav-menu__sign-in
+          = link_to new_user_session_path, class: "nav-menu__links" do
+            ログイン
