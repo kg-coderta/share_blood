@@ -31,7 +31,14 @@
             = link_to articles_path, class: "nav-menu__links" do
               .nav-menu__read-icon
                 = fa_icon "book", class: 'nav-menu__read-icon'
-                記事一覧を見る
+                最新記事を見る
         .nav-menu__sign-in
-          = link_to new_user_session_path, class: "nav-menu__links" do
-            ログイン
+          - unless user_signed_in?
+            = link_to new_user_session_path, class: "nav-menu__links" do
+              ログイン
+          - else
+            .user-name
+              = fa_icon "user-circle", class: 'nav-menu__read-icon'
+              = "#{current_user.nickname}さん"
+            = link_to destroy_user_session_path, class: "nav-menu__links" do
+              ログアウト

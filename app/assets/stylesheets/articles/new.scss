@@ -1,11 +1,11 @@
 .write-wrapper{
   height: calc(100vh - 104px);
-  background: rgb(245, 245, 245);
+  background: rgb(237, 253, 214);
 }
 
 .write-main{
   text-align: center;
-  padding-top: 60px;
+  padding-top: 45px;
 }
 
 .write-title{
@@ -13,6 +13,12 @@
   color: rgb(160, 156, 156);
 }
 
+.input-title{
+  width: 55vw;
+  margin: 25px auto;
+  padding: 10px;
+  font-size: 18px;
+}
 .input-article{
   height: 350px;
   width: 55vw;

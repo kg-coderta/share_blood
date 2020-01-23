@@ -36,7 +36,7 @@ namespace :deploy do
 
   desc 'upload secrets.yml' #ローカル環境にあるconfig/secrets.ymlを本番環境のshared/config/secrets.ymlに反映するための設定
   task :upload do
-    on roles(:app) do |host|
+    on roles(:app) do 
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end

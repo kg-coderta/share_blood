@@ -7,48 +7,19 @@
           = fa_icon 'thumbs-o-up', class: 'nav-menu__thumb-icon'
           オススメの献血ルーム紹介
         .articles-main-wrapper
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です    
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です    
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です
-          .article-box
-            .article-image
-            .article-body
-              .article-body__title.bold
-                test-title
-              .article-body__text
-                とても居心地の良い空間で待っている間もくつろげました！お菓子や飲み物が食べられてボランティアにもなるので一石二鳥です  
+          - @articles.each do |article|
+            .article-box
+              .article-image
+                = image_tag (article.image.to_s), class: "article-image"
+              .article-body
+                .article-body__title.bold
+                  - if article.title.blank?
+                    = "no title"
+                  - else
+                    = article.title
+                .article-body__text
+                  = article.text
+          = paginate @articles
   .other-contents-wrapper
     .other-contents-left
       .reservation

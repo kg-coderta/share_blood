@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2019_12_25_071707) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text"
-    t.string "image", null: false
+    t.text "text", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "image"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 

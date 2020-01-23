@@ -1,7 +1,7 @@
 .signin-wrapper
   = render "devise/shared/error_messages", resource: resource
   .signup-main
-    = form_with model: @user, url: root_path, method: :get, id: "new_user", class: "new_user", local: true do |f|
+    = form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f|
       .signup-title
         = fa_icon "users", class: 'signup-title__icon'
         Share blood
