@@ -1,7 +1,7 @@
 .signup-wrapper
   = render "devise/shared/error_messages", resource: resource
   .signup-main
-    = form_with model: @user, url: root_path, method: :get, id: 'new_user', class: 'new_user', local: true do |f|
+    = form_with model: @user, url:  user_registration_path, method: :post, id: 'new_user', class: 'new_user', local: true do |f|
       .signup-title
         = fa_icon "users", class: 'signup-title__icon'
         Share blood 
@@ -11,7 +11,7 @@
         .field
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'input-default'
         .field
-          = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: 'input-default'
+          = f.password_field :password, autocomplete: "new-password", placeholder: "password(6文字以上)", class: 'input-default'
         .field
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password again", class: 'input-default'
         .submit.bold
