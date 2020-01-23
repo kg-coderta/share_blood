@@ -1,12 +1,15 @@
 .wrapper
   =render "header"
   .write-wrapper
-    = form_with model: @articles, url: root_path, id: "new_article", class: "new_article", local: true do |f|
+    = form_with model: @article, url: articles_path, local: true do |f|
       .write-main
         .write-title
           お気に入りルームを教える
         .article-fields  
-          = f.text_area :text, autofocus: true, autocomplete: "text", placeholder: "オススメポイントを書こう！", class: "input-article"
+          .article-title
+            = f.text_field :title, autofocus: true, autocomplete: "title", placeholder: "記事タイトル", class: "input-title"
+          .article-text
+            = f.text_area :text, autofocus: true, autocomplete: "text", placeholder: "オススメポイントを書こう！", class: "input-article"
           .article-field
             .submit-image
               = fa_icon 'picture-o', class: 'icon'
