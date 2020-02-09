@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :articles
-  
+  resources :articles do
+    resources :comments, only: [:new, :create, :destroy]
+  end  
 end
