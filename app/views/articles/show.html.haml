@@ -1,0 +1,33 @@
+.wrapper
+  = render "header" 
+  .show-wrapper   
+    .show-article-img
+      = image_tag (@article.image.to_s), class: "show-article-image"
+    .show-article
+      .show-article__title.bold
+        - if @article.title.blank?
+          = "no title"
+        - else
+          = @article.title
+      .show-article__date
+        = @article.updated_at.strftime("%Y-%m-%d")
+      .show-article__text
+        = @article.text
+      .comments
+        [コメント]
+        - @article.comments.each.with_index do |comment,index|
+          .comment
+            .comment__user
+              #{comment.user.nickname}さん
+            .comment__message
+              = comment.message
+              
+            .comment__delete
+              = link_to "削除する", "/articles/#{@article.id}/comments/#{@article.comments.ids[index]}", method: :delete  
+        - if user_signed_in?
+          .send_comment
+            = form_with model: @comment, url: article_comments_path(@article), method: :post, id: 'comment', class: 'show-comment', local: true do |f|
+              .comment-boxes
+                = f.text_area :message, autofocus: true, autocomplete: "message", placeholder: "メッセージを送ろう!", class: "message-box"
+                .submit.bold
+                  = f.submit "コメントする", class: "message-button"
