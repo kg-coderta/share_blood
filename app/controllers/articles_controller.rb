@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.includes(:user).page(params[:page]).per(6).order("created_at DESC")
+    @articles = Article.includes(user: :comments).page(params[:page]).per(6).order("created_at DESC")
   end
 
   def new
@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(article_params)
+    @article = Article.new(article_params)
     if @article.save
       redirect_to root_path
     else
@@ -18,8 +18,28 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
+
   end
   
+  def destroy
+    @article = Article.find(params[:id])
+    if Article.user_id == current_user.id
+      @article.destroy
+      redirect_to root_path
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if article.user_id == current_user.id
+      article.update(article_params)
+    end
+  end
 
 
   private

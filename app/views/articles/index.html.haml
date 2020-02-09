@@ -8,27 +8,31 @@
           オススメの献血ルーム紹介
         .articles-main-wrapper
           - @articles.each do |article|
-            .article-box
-              .article-image
-                = image_tag (article.image.to_s), class: "article-image"
-              .article-body
-                .article-body__title.bold
-                  - if article.title.blank?
-                    = "no title"
-                  - else
-                    = article.title
-                .article-body__text
-                  = article.text
+            = link_to article_path(article.id) do
+              .article-box
+                .article-image
+                  = image_tag (article.image.to_s), class: "article-image"
+                .article-body
+                  .article-body__title.bold
+                    - if article.title.blank?
+                      = "no title"
+                    - else
+                      = article.title
+                  .article-body__text
+                    = article.text
           = paginate @articles
   .other-contents-wrapper
     .other-contents-left
       .reservation
         .left-days
-          200ml献血は 
-          %span{style:  "font-size:2em;"}●月●日 
+          = Time.now.strftime("%m月%d日")
+          に献血したあなたは 次回の 成分献血は 
+          %span{style:  "font-size:2em;"}
+            = Time.now.since(8.weeks).strftime("%m月%d日")
         .left-days
-          400ml献血、成分献血は
-          %span{style: "font-size:2em;"}■月■日
+          200ml献血,400ml献血は
+          %span{style: "font-size:2em;"}
+            = Time.now.since(12.weeks).strftime("%m月%d日")
         .left-days
           から可能です
         .donated-check
@@ -36,16 +40,18 @@
             献血が終わったら ここをクリック！→
           = form_with model: @user, url: root_path, method: :get, id: 'donated_user', class: 'donated_user', local: true do |f|
             = f.submit "献血した！", class: "donated-check__button", value: "献血した！"
-      .show-donation
-        .donation-mask
-          .show-donation__frequency
-            ◯◯さんはこれまでに
-            %span{style:  "font-size:2.5em;"}××回
-          .show-donation__frequency
-            献血しています
-          .show-donation__detail
-            .show-donation__detail__button
-              データを見る
+      - if user_signed_in?
+        .show-donation
+          .donation-mask
+            .show-donation__frequency
+              #{current_user.nickname}さんはこれまでに
+              %span{style:  "font-size:2.5em;"}××回
+            .show-donation__frequency
+              献血しています
+            .show-donation__detail
+              .show-donation__detail__button
+                データを見る
+      - else
     .other-contents-right
       %h2 
       #map
