@@ -1,0 +1,45 @@
+.fortune-wrapper{
+  height: 100vh;
+  background: rgb(253, 253, 239);
+}
+
+.fortune-title{
+  text-align: center;
+  font-size: 4vw;
+  animation: flash 4s linear infinite;
+}
+
+@keyframes flash {
+  0%,50%,100% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+    color: limegreen;
+  }
+  65%{
+    opacity: 1;
+    color:#0091EA;
+  }
+}
+
+#fortune-teller-btn{
+  height: 300px;
+  width: 300px;
+  font-size: 50px;
+  background: skyblue;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 300px;
+  margin: 180px auto;
+  box-shadow: 0 15px 0 rgb(124, 184, 207);
+  user-select: none;
+  &:hover{
+    opacity: 0.8;
+  } 
+  &:active{
+    box-shadow: 0 8px 0 rgb(124, 184, 207);
+    
+  }
+}

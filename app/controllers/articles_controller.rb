@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except:[:index,:show] 
 
   def index
     @articles = Article.includes(user: :comments).page(params[:page]).per(6).order("created_at DESC")
@@ -41,7 +42,9 @@ class ArticlesController < ApplicationController
       article.update(article_params)
     end
   end
-
+  
+  def fortune
+  end
 
   private
   def article_params

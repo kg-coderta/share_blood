@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set
   
   def new
     @comment = Comment.new
@@ -30,9 +28,5 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.permit(:message,:article_id).merge(user_id: current_user.id)
-  end
-
-  def set
-    @article = Article.find(params[:article_id])
   end
 end
