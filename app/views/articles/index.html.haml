@@ -20,13 +20,14 @@
                       = article.title
                   .article-body__text
                     = article.text
-          = paginate @articles
+        = paginate @articles
   .other-contents-wrapper
     .other-contents-left
       .reservation
         .left-days
+          今日
           = Time.now.strftime("%m月%d日")
-          に献血したあなたは 次回の 成分献血は 
+          に献血した場合 次回の 成分献血は 
           %span{style:  "font-size:2em;"}
             = Time.now.since(8.weeks).strftime("%m月%d日")
         .left-days
