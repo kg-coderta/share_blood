@@ -73,3 +73,24 @@ a{
 .next{
   @include page-arrange(50px, 0)
 }
+
+// レスポンシブ対応のためのブレイクポイントの設定
+$pc: 1100px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
