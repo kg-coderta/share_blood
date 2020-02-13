@@ -1,6 +1,14 @@
 .fortune-wrapper
   .fortune-title
-    今日のあなたの運勢は？
+    あなたの血液型の運勢を占おう！
   .fortune-teller
-    #fortune-teller-btn
-      大吉
+    #roulette
+      #result
+        あなたの運勢は？
+    .btns
+      %button#start start
+      %button#stop stop
+  .return-from-fortune
+    = link_to "トップページに戻る", root_path
+  .fortune-footer      
+%script{:src => "fortune.js"}
