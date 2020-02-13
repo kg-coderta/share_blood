@@ -23,23 +23,51 @@
   }
 }
 
-#fortune-teller-btn{
+#roulette{
   height: 300px;
   width: 300px;
-  font-size: 50px;
+  font-size: 30px;
   background: skyblue;
   border-radius: 50%;
   text-align: center;
   color: white;
   line-height: 300px;
-  margin: 180px auto;
+  margin: 100px auto;
   box-shadow: 0 15px 0 rgb(124, 184, 207);
   user-select: none;
+}
+
+.btns{
+  text-align: center;
+}
+#start , #stop {
+  height:50px;
+  width: 120px;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 45px;
+  color: #42dbe6;
+  outline:none;
+  border:solid 1px #42dbe6;
+  border-radius: 20px;
+  background-color: #fff;
+  cursor: pointer;
   &:hover{
-    opacity: 0.8;
+    color: slateblue;
   } 
-  &:active{
-    box-shadow: 0 8px 0 rgb(124, 184, 207);
-    
-  }
+}
+
+.return-from-fortune{
+  text-align: right;
+  margin-right: 50px;
+}
+  
+.fortune-footer{
+  height: 170px;
+  width: 25%;
+  margin: 0 auto;
+  background-image: image-url("blood-type.png");
+  background-size: cover;
 }

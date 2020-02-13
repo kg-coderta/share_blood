@@ -51,7 +51,7 @@
               献血しています
             .show-donation__detail
               .show-donation__detail__button
-                データを見る
+                =link_to "データを見る", root_path, class: "show-donation__detail__button"
       - else
     .other-contents-right
       %h2 
@@ -75,4 +75,4 @@
         .fortune-telling__text.bold
           血液型占いにチャレンジしてみよう！
         .fortune-telling__button
-          =link_to "やってみる→", root_path, class: "fortune-telling__button"    
+          =link_to "やってみる→", fortune_path, class: "fortune-telling__button"    
