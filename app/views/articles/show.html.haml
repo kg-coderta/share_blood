@@ -29,5 +29,8 @@
             = form_with model: @comment, url: article_comments_path(@article), method: :post, id: 'comment', class: 'show-comment', local: true do |f|
               .comment-boxes
                 = f.text_area :message, autofocus: true, autocomplete: "message", placeholder: "メッセージを送ろう", class: "message-box"
-                .submit.bold
+                .show-buttons.bold
                   = f.submit "コメントする", class: "message-button"
+                - if @article.user_id == current_user.id
+                  .delete-article
+                    = link_to '記事を削除する',article_path(@article), method: :delete, class: "delete-button", data: {confirm:'削除しますか？'} 
