@@ -6,3 +6,28 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+  
+  errors:
+    messages:
+      not_saved: ""
+
+  activerecord:
+    errors:
+      messages:
+        not_saved: ""
+      models:
+        user: 
+          save:
+
+          attributes:
+            nickname: 
+              blank: "を入力してください"
+              too_long: "が長すぎます"
+            email:
+              blank: "を入力してください"
+              invalid: "が不正です"
+            password:
+              blank: "を入力してください"
+              too_short: "が短すぎます"
+            password_confirmation:
+              confirmation: "が一致していません"
